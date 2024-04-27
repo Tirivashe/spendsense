@@ -1,10 +1,11 @@
-import { Group, Text } from "@mantine/core";
+import { Anchor, Group, Text } from "@mantine/core";
 import Link from "next/link";
 import { IconMoneybag } from "@tabler/icons-react";
+import classes from "./Logo.module.css";
 
 const Logo = () => {
   return (
-    <Group gap="xs" align="center" justify="center">
+    <Anchor component={Link} href="/" className={classes.root}>
       <IconMoneybag size={34} color="orange" stroke={1} />
       <Text
         fz="1.7rem"
@@ -16,7 +17,7 @@ const Logo = () => {
       >
         SpendSense
       </Text>
-    </Group>
+    </Anchor>
   );
 };
 
