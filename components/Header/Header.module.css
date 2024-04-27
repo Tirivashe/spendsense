@@ -1,11 +1,17 @@
 .nav {
   color: var(--mantine-color-gray-5);
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   transition: color 0.1s ease-in;
   @mixin hover {
     color: var(--mantine-color-gray-3);
+    border-bottom: 2px solid var();
   }
 
   &[data-active="true"] {
     color: var(--mantine-color-white);
+    border-bottom: 2px solid var(--mantine-color-white);
   }
 }

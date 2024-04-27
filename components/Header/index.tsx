@@ -21,7 +21,7 @@ const Header = (props: Props) => {
   return (
     <Group align="center" px="lg" h="100%" gap="xl">
       <Logo />
-      <Group align="center" gap="xl">
+      <Group align="center" gap="xl" h="100%">
         {navPaths.map(({ label, link }) => (
           <React.Fragment key={link}>
             <Anchor
