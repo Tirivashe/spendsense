@@ -1,0 +1,11 @@
+.nav {
+  color: var(--mantine-color-gray-5);
+  transition: color 0.1s ease-in;
+  @mixin hover {
+    color: var(--mantine-color-gray-3);
+  }
+
+  &[data-active="true"] {
+    color: var(--mantine-color-white);
+  }
+}
