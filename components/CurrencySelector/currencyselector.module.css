@@ -1,0 +1,15 @@
+.select-input {
+  background-color: transparent;
+  &:focus {
+    border: 1px solid white;
+  }
+}
+
+.select-label {
+  font-weight: 400;
+  font-size: small;
+}
+
+.divider {
+  border: 1px solid darken(var(--mantine-color-gray-9), 0.5);
+}
