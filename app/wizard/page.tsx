@@ -1,5 +1,4 @@
 import Logo from "@/components/Logo";
-import { currentUser } from "@clerk/nextjs/server";
 import {
   Button,
   Center,
@@ -9,17 +8,14 @@ import {
   Stack,
   Text,
 } from "@mantine/core";
-import { redirect } from "next/navigation";
 import React from "react";
 import classes from "./wizardpage.module.css";
 import CurrencySelector from "@/components/CurrencySelector";
 import Link from "next/link";
+import { getUserOrRedirect } from "@/utils/common";
 
 const WizardPage = async () => {
-  const user = await currentUser();
-  if (!user) {
-    redirect("/sign-up");
-  }
+  const user = await getUserOrRedirect();
   return (
     <Center h="100vh">
       <Paper component={Stack} justify="center" gap="xs" px="md">
