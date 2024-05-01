@@ -71,7 +71,7 @@ const CategoryPicker = ({ type, form }: Props) => {
   );
 
   return (
-    <Box mt="md">
+    <Box>
       <Combobox
         store={combobox}
         onOptionSubmit={(val) => {

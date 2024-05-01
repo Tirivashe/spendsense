@@ -17,7 +17,6 @@
 
 .dropdown {
   background-color: var(--mantine-color-gray-9);
-  max-width: 300px;
 }
 
 .search-input {

@@ -1,16 +1,19 @@
 "use client";
+import React, { useState } from "react";
 import { TransactionType } from "@/lib/types";
 import {
   Box,
   Button,
+  Flex,
   Group,
   Modal,
   NumberInput,
+  SimpleGrid,
   Stack,
   Text,
   TextInput,
 } from "@mantine/core";
-import React, { useState } from "react";
+import { DatePickerInput } from "@mantine/dates";
 import classes from "./newtransaction.module.css";
 import { useDisclosure } from "@mantine/hooks";
 import {
@@ -19,6 +22,7 @@ import {
 } from "@/validation-schemas/transaction";
 import { useForm, zodResolver } from "@mantine/form";
 import CategoryPicker from "../CategoryPicker";
+import { IconCalendar } from "@tabler/icons-react";
 
 const NewTransaction = () => {
   const [opened, { open, close }] = useDisclosure(false);
@@ -91,7 +95,21 @@ const NewTransaction = () => {
             classNames={{ input: classes.input }}
           />
         </Stack>
-        <CategoryPicker type={type} form={form} />
+        <SimpleGrid
+          cols={{ base: 1, md: 2 }}
+          spacing="md"
+          verticalSpacing="md"
+          mt="md"
+        >
+          <CategoryPicker type={type} form={form} />
+          <DatePickerInput
+            label="Transaction Date"
+            placeholder="Pick the transaction date"
+            {...form.getInputProps("date")}
+            rightSection={<IconCalendar size={18} />}
+            classNames={{ input: classes.input, monthCell: classes.monthCell }}
+          />
+        </SimpleGrid>
       </Modal>
     </>
   );
