@@ -1,0 +1,50 @@
+.input {
+  border: 1px solid var(--mantine-color-gray-9);
+  background-color: transparent;
+  transition: all 0.1s ease;
+
+  &:focus {
+    border: 1px solid white;
+    @mixin hover {
+      border: 1px solid white;
+    }
+  }
+
+  @mixin hover {
+    border: 1px solid var(--mantine-color-gray-7);
+  }
+}
+
+.dropdown {
+  background-color: var(--mantine-color-gray-9);
+  max-width: 300px;
+}
+
+.search-input {
+  background-color: transparent;
+  border-bottom: 1px solid var(--mantine-color-gray-7);
+  margin: 2px 0;
+}
+
+.button {
+  color: white;
+  transition: all 0.1s ease;
+
+  @mixin hover {
+    background-color: var(--mantine-color-gray-8);
+    color: white;
+  }
+}
+
+.modal-content {
+  border: 1px solid var(--mantine-color-gray-9);
+  border-radius: 10px;
+}
+
+.option {
+  background-color: transparent;
+
+  @mixin hover {
+    background-color: var(--mantine-color-gray-7);
+  }
+}

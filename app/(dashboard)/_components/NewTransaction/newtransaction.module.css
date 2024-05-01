@@ -1,0 +1,45 @@
+.button-income {
+  border: 1px solid var(--mantine-color-green-4);
+  background-color: var(--mantine-color-green-9);
+  color: white;
+  transition: all 0.1s ease-in;
+
+  @mixin hover {
+    border: 1px solid var(--mantine-color-green-5);
+    background-color: var(--mantine-color-green-5);
+  }
+}
+
+.button-expense {
+  border: 1px solid var(--mantine-color-red-4);
+  background-color: var(--mantine-color-red-9);
+  color: white;
+  transition: all 0.1s ease-in;
+
+  @mixin hover {
+    border: 1px solid var(--mantine-color-red-5);
+    background-color: var(--mantine-color-red-5);
+  }
+}
+
+.modal-content {
+  border: 1px solid var(--mantine-color-gray-9);
+  border-radius: 10px;
+}
+
+.input {
+  border: 1px solid var(--mantine-color-gray-9);
+  background-color: transparent;
+  transition: all 0.1s ease;
+
+  &:focus {
+    border: 1px solid white;
+    @mixin hover {
+      border: 1px solid white;
+    }
+  }
+
+  @mixin hover {
+    border: 1px solid var(--mantine-color-gray-7);
+  }
+}
