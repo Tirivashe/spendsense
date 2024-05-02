@@ -50,3 +50,31 @@
     color: black;
   }
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.button-cancel {
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+
+  @mixin hover {
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+  }
+}
+
+.button-confirm {
+  background-color: white;
+  color: black;
+
+  @mixin hover {
+    background-color: white;
+    color: black;
+  }
+}

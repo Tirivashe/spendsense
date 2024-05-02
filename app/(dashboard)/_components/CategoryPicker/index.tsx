@@ -65,9 +65,10 @@ const CategoryPicker = ({ type, form }: Props) => {
   const successCategoryCallback = useCallback(
     (category: Category) => {
       setValue(category.name);
+      form.setFieldValue("category", category.name);
       combobox.closeDropdown();
     },
-    [combobox]
+    [combobox, form]
   );
 
   return (
