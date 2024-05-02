@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import React from "react";
 import classes from "./dashbord.module.css";
 import NewTransaction from "./_components/NewTransaction";
+import Overview from "./_components/Overview";
 
 type Props = {};
 
@@ -21,6 +22,8 @@ const Dashboard = async (props: Props) => {
       <Group
         justify="space-between"
         align="center"
+        px="2.5rem"
+        py="1.5rem"
         className={classes.container}
       >
         <Text fz="h3">
@@ -32,6 +35,7 @@ const Dashboard = async (props: Props) => {
         </Text>
         <NewTransaction />
       </Group>
+      <Overview userSettings={userSettings} />
     </Box>
   );
 };

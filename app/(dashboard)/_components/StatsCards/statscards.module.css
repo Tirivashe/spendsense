@@ -1,0 +1,19 @@
+.icon {
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.icon-income {
+  background-color: darken(var(--mantine-color-green-9), 0.5);
+  color: var(--mantine-color-green-2);
+}
+
+.icon-expense {
+  background-color: darken(var(--mantine-color-red-9), 0.5);
+  color: var(--mantine-color-red-2);
+}
+
+.icon-balance {
+  background-color: darken(var(--mantine-color-blue-9), 0.5);
+  color: var(--mantine-color-blue-2);
+}

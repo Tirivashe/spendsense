@@ -1,0 +1,22 @@
+.datePicker {
+  button {
+    &[data-in-range="true"],
+    [data-outside="true"] {
+      background-color: var(--mantine-color-gray-6);
+      color: var(--mantine-color-gray-5);
+    }
+    &[data-in-range="true"] {
+      background-color: var(--mantine-color-gray-7);
+      color: var(--mantine-color-gray-4);
+    }
+
+    &[data-selected="true"] {
+      background-color: white;
+      color: black;
+    }
+  }
+}
+
+.button {
+  border: 1px solid var(--mantine-color-gray-7);
+}
