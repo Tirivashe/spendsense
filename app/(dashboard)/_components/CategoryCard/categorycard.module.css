@@ -1,0 +1,3 @@
+.paper {
+  background-color: darken(var(--mantine-color-dark-8), 0.7);
+}

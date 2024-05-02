@@ -27,7 +27,7 @@ const StatCard = ({ title, value, icon, currency }: Props) => {
           </Text>
           <CountUp
             preserveValue
-            end={124}
+            end={value}
             decimals={2}
             formattingFn={formatFn}
             redraw={false}

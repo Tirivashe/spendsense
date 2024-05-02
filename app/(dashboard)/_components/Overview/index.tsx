@@ -8,6 +8,7 @@ import { IconChevronDown } from "@tabler/icons-react";
 import classes from "./overview.module.css";
 import { MAX_DATE_RANGE_DAYS } from "@/lib/constants";
 import StatsCards from "../StatsCards";
+import CategoryStats from "../CategoryStats";
 
 type Props = {
   userSettings: UserSettings;
@@ -59,6 +60,7 @@ const Overview = ({ userSettings }: Props) => {
         </Popover>
       </Group>
       <StatsCards userSettings={userSettings} from={from} to={to} />
+      <CategoryStats userSettings={userSettings} from={from} to={to} />
     </Container>
   );
 };
