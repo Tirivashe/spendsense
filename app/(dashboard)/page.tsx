@@ -36,8 +36,10 @@ const Dashboard = async (props: Props) => {
         </Text>
         <NewTransaction />
       </Group>
-      <Overview userSettings={userSettings} />
-      <History userSettings={userSettings} />
+      <Box px="2.5rem">
+        <Overview userSettings={userSettings} />
+        <History userSettings={userSettings} />
+      </Box>
     </Box>
   );
 };

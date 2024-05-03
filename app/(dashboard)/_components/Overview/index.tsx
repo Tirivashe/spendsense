@@ -1,5 +1,5 @@
 "use client";
-import { Button, Container, Group, Popover, Title } from "@mantine/core";
+import { Box, Button, Group, Popover, Title } from "@mantine/core";
 import { DatePicker } from "@mantine/dates";
 import { UserSettings } from "@prisma/client";
 import React, { useState } from "react";
@@ -28,7 +28,7 @@ const Overview = ({ userSettings }: Props) => {
   };
 
   return (
-    <Container fluid px="2.5rem" py="lg">
+    <Box py="lg">
       <Group justify="space-between" align="center">
         <Title order={2} c="white">
           Overview
@@ -61,7 +61,7 @@ const Overview = ({ userSettings }: Props) => {
       </Group>
       <StatsCards userSettings={userSettings} from={from} to={to} />
       <CategoryStats userSettings={userSettings} from={from} to={to} />
-    </Container>
+    </Box>
   );
 };
 
