@@ -18,7 +18,7 @@ const StatCard = ({ title, value, icon, currency }: Props) => {
     [currency]
   );
   return (
-    <Paper withBorder className={classes.paper} px="lg" py="md">
+    <Paper className={classes.paper} px="lg" py="md">
       <Group gap="sm">
         {icon}
         <Stack gap={0}>

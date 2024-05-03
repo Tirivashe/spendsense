@@ -32,7 +32,7 @@ const CategoryCard = ({ data, type, currency }: Props) => {
     0
   );
   return (
-    <Paper withBorder className={classes.paper} px="lg" py="md">
+    <Paper className={classes.paper} px="lg" py="md">
       <Title order={2}>
         {type === "income" ? "Incomes" : "Expenses"} by category
       </Title>

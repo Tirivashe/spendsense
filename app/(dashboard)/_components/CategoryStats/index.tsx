@@ -34,14 +34,14 @@ const CategoryStats = ({ userSettings, from, to }: Props) => {
 
   if (isFetching || isLoading || !data) {
     return (
-      <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="sm">
+      <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="5px">
         <Skeleton height={300} />
         <Skeleton height={300} />
       </SimpleGrid>
     );
   }
   return (
-    <SimpleGrid spacing="sm" cols={{ base: 1, sm: 2 }}>
+    <SimpleGrid spacing="5px" cols={{ base: 1, sm: 2 }}>
       <CategoryCard type="income" data={data} currency={formatter} />
       <CategoryCard type="expense" data={data} currency={formatter} />
     </SimpleGrid>

@@ -42,7 +42,7 @@ const StatsCards = ({ userSettings, from, to }: Props) => {
 
   if (isFetching || isLoading) {
     return (
-      <SimpleGrid cols={{ base: 1, sm: 3 }} spacing="sm" py="xl">
+      <SimpleGrid cols={{ base: 1, sm: 3 }} spacing="5px" pt="xl" pb="5px">
         <Skeleton height={100} />
         <Skeleton height={100} />
         <Skeleton height={100} />
@@ -51,7 +51,7 @@ const StatsCards = ({ userSettings, from, to }: Props) => {
   }
 
   return (
-    <SimpleGrid spacing="sm" cols={{ base: 1, sm: 3 }} py="xl">
+    <SimpleGrid spacing="5px" cols={{ base: 1, sm: 3 }} pt="xl" pb="5px">
       <StatCard
         title="Income"
         value={income}
