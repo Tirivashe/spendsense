@@ -6,6 +6,7 @@ import React from "react";
 import classes from "./dashbord.module.css";
 import NewTransaction from "./_components/NewTransaction";
 import Overview from "./_components/Overview";
+import History from "./_components/History";
 
 type Props = {};
 
@@ -36,6 +37,7 @@ const Dashboard = async (props: Props) => {
         <NewTransaction />
       </Group>
       <Overview userSettings={userSettings} />
+      <History userSettings={userSettings} />
     </Box>
   );
 };
