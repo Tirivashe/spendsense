@@ -1,0 +1,44 @@
+.paper {
+  background-color: darken(var(--mantine-color-dark-8), 0.7);
+  border: 1px solid darken(var(--mantine-color-dark-8), 0.3);
+}
+
+.tooltip-label {
+  &::before {
+    display: inline-block;
+    content: "";
+    height: 10px;
+    width: 10px;
+    margin-right: 5px;
+    border-radius: 50%;
+  }
+  &[data-label="income"] {
+    &::before {
+      background-color: var(--mantine-color-green-5);
+    }
+  }
+  &[data-label="expense"] {
+    &::before {
+      background-color: var(--mantine-color-red-5);
+    }
+  }
+
+  &[data-label="balance"] {
+    &::before {
+      background-color: var(--mantine-color-white);
+    }
+  }
+}
+
+.tooltip-value {
+  &[data-label="income"] {
+    color: var(--mantine-color-green-5);
+  }
+  &[data-label="expense"] {
+    color: var(--mantine-color-red-5);
+  }
+
+  &[data-label="balance"] {
+    color: var(--mantine-color-white);
+  }
+}
