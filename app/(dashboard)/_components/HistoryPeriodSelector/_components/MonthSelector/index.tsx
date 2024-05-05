@@ -1,6 +1,7 @@
 import { Period } from "@/lib/types";
-import { ComboboxData, Select } from "@mantine/core";
+import { Select } from "@mantine/core";
 import React from "react";
+import classes from "../historyperiodselector.module.css";
 
 const MonthSelector = ({
   period,
@@ -29,6 +30,7 @@ const MonthSelector = ({
         setPeriod({ year: period.year, month: Number(value) })
       }
       disabled={disabled}
+      classNames={{ input: classes.input }}
     />
   );
 };

@@ -1,0 +1,10 @@
+.input {
+  background-color: transparent;
+  &:focus {
+    border: 1px solid white;
+  }
+
+  @mixin hover {
+    border: 1px solid var(--mantine-color-gray-7);
+  }
+}
