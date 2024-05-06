@@ -11,18 +11,15 @@ import {
   Group,
   ScrollArea,
   Button,
-  Modal,
   Text,
-  Stack,
 } from "@mantine/core";
 import React, { useCallback, useState } from "react";
 import { IconCirclePlus, IconSearch } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
-import CreateNewCategoryModal from "../CreateNewCategoryModal";
 import classes from "./categorypicker.module.css";
 import { UseFormReturnType } from "@mantine/form";
 import { CreateTransactionSchemaType } from "@/validation-schemas/transaction";
-import { format } from "path";
+import CreateCategoryModal from "@/components/CreateCategoryModal";
 
 type Props = {
   type: TransactionType;
@@ -140,32 +137,12 @@ const CategoryPicker = ({ type, form }: Props) => {
           </ScrollArea.Autosize>
         </Combobox.Dropdown>
       </Combobox>
-      <Modal
+      <CreateCategoryModal
+        type={type}
         opened={opened}
-        onClose={close}
-        centered
-        classNames={{ content: classes["modal-content"] }}
-        title={
-          <Stack gap="xs">
-            <Text c="white">
-              Create{" "}
-              <Text span c={type === "income" ? "green.5" : "red.5"}>
-                {type}
-              </Text>{" "}
-              category
-            </Text>
-            <Text size="sm" ta="center" c="dimmed">
-              Categories are used to group transactions
-            </Text>
-          </Stack>
-        }
-      >
-        <CreateNewCategoryModal
-          type={type}
-          closeDialog={close}
-          successCategoryCallback={successCategoryCallback}
-        />
-      </Modal>
+        close={close}
+        successCategoryCallback={successCategoryCallback}
+      />
     </Box>
   );
 };

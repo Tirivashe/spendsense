@@ -1,0 +1,9 @@
+.button {
+  background-color: var(--mantine-color-gray-7);
+  color: var(--mantine-color-gray-2);
+  transition: all 0.2s ease-in;
+
+  @mixin hover {
+    background-color: var(--mantine-color-red-9);
+  }
+}

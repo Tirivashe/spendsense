@@ -4,6 +4,8 @@ import { getUserOrRedirect } from "@/utils/common";
 import {
   CreateCategorySchema,
   CreateCategorySchemaType,
+  DeleteCategorySchema,
+  DeleteCategorySchemaType,
 } from "@/validation-schemas/categories";
 
 export async function CreateCategory(form: CreateCategorySchemaType) {
@@ -22,6 +24,27 @@ export async function CreateCategory(form: CreateCategorySchemaType) {
       name,
       type,
       userId: user.id,
+    },
+  });
+}
+
+export async function DeleteCategory(form: DeleteCategorySchemaType) {
+  const parsedBody = DeleteCategorySchema.safeParse(form);
+
+  if (!parsedBody.success) {
+    throw new Error("Bad request");
+  }
+
+  const user = await getUserOrRedirect();
+  const { name, type } = parsedBody.data;
+
+  return await prisma.category.delete({
+    where: {
+      name_userId_type: {
+        name,
+        type,
+        userId: user.id,
+      },
     },
   });
 }

@@ -20,11 +20,11 @@ import data from "@emoji-mart/data";
 import React, { useCallback, useState } from "react";
 import { useDisclosure } from "@mantine/hooks";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { CreateCategory } from "../../_actions/categories";
 import { notifications } from "@mantine/notifications";
 import { Category } from "@prisma/client";
 import { IconCheck, IconCircleOff, IconX } from "@tabler/icons-react";
-import classes from "./createnewcategory.module.css";
+import classes from "./createcategorymodalbody.module.css";
+import { CreateCategory } from "@/app/(dashboard)/_actions/categories";
 
 type Props = {
   type: TransactionType;
@@ -32,7 +32,7 @@ type Props = {
   successCategoryCallback: (category: Category) => void;
 };
 
-const CreateNewCategoryModal = ({
+const CreateCategoryModalBody = ({
   type,
   closeDialog,
   successCategoryCallback,
@@ -165,4 +165,4 @@ const CreateNewCategoryModal = ({
   );
 };
 
-export default CreateNewCategoryModal;
+export default CreateCategoryModalBody;

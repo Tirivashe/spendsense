@@ -1,0 +1,30 @@
+.paper {
+  background-color: darken(var(--mantine-color-dark-8), 0.7);
+  border: 1px solid darken(var(--mantine-color-dark-8), 0.5);
+}
+
+.icon {
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.icon-income {
+  background-color: darken(var(--mantine-color-green-9), 0.5);
+  color: var(--mantine-color-green-2);
+}
+
+.icon-expense {
+  background-color: darken(var(--mantine-color-red-9), 0.5);
+  color: var(--mantine-color-red-2);
+}
+
+.button {
+  background-color: transparent;
+  color: var(--mantine-color-gray-2);
+  transition: all 0.1s ease-in;
+
+  @mixin hover {
+    background-color: white;
+    color: var(--mantine-color-gray-8);
+  }
+}
