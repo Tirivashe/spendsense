@@ -8,6 +8,7 @@ import "@mantine/notifications/styles.css";
 
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
+import { ModalsProvider } from "@mantine/modals";
 import { ClerkProvider } from "@clerk/nextjs";
 import { resolver } from "@/theme";
 import RootProvider from "@/providers/RootProvider";
@@ -35,7 +36,7 @@ export default function RootLayout({
               cssVariablesResolver={resolver}
             >
               <Notifications />
-              {children}
+              <ModalsProvider>{children}</ModalsProvider>
             </MantineProvider>
           </RootProvider>
         </body>
