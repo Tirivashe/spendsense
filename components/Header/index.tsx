@@ -1,16 +1,27 @@
 "use client";
-import { Anchor, Burger, Drawer, Group } from "@mantine/core";
-import React from "react";
+import {
+  Anchor,
+  Avatar,
+  Burger,
+  Drawer,
+  Group,
+  Menu,
+  rem,
+} from "@mantine/core";
+import React, { useCallback } from "react";
 import Logo from "../Logo";
 import Link from "next/link";
 import classes from "./Header.module.css";
 import { usePathname } from "next/navigation";
 import { useDisclosure } from "@mantine/hooks";
 import DrawerContent from "../DrawerContent";
+import { IconLogout } from "@tabler/icons-react";
+import { useClerk } from "@clerk/nextjs";
 
 type Props = {};
 
 const Header = (props: Props) => {
+  const { signOut } = useClerk();
   const pathname = usePathname();
   const [opened, { open, close }] = useDisclosure(false);
   const navPaths: { label: string; link: string }[] = [
@@ -18,6 +29,10 @@ const Header = (props: Props) => {
     { label: "Transactions", link: "/transactions" },
     { label: "Manage", link: "/manage" },
   ];
+
+  const logout = useCallback(() => {
+    signOut();
+  }, [signOut]);
   return (
     <Group align="center" px="lg" h="100%" gap="xl">
       <Logo />
@@ -36,6 +51,25 @@ const Header = (props: Props) => {
             </Anchor>
           </React.Fragment>
         ))}
+      </Group>
+      <Group justify="flex-end" align="center" flex={1} px="lg">
+        <Menu>
+          <Menu.Target>
+            <Avatar style={{ cursor: "pointer" }}>MK</Avatar>
+          </Menu.Target>
+          <Menu.Dropdown>
+            <Menu.Label>Application</Menu.Label>
+            <Menu.Item
+              color="red"
+              leftSection={
+                <IconLogout style={{ width: rem(14), height: rem(14) }} />
+              }
+              onClick={logout}
+            >
+              Log out
+            </Menu.Item>
+          </Menu.Dropdown>
+        </Menu>
       </Group>
       <Group hiddenFrom="sm" justify="flex-end" px="md" flex={1}>
         <Burger
