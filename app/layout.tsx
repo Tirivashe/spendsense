@@ -15,8 +15,9 @@ import { resolver } from "@/theme";
 import RootProvider from "@/providers/RootProvider";
 
 export const metadata = {
-  title: "My Mantine app",
-  description: "I have followed setup instructions carefully",
+  title: "SpendSense",
+  description:
+    "Have a sense of how you are spending your money. By Tirivashe Shamhu",
 };
 
 export default function RootLayout({
