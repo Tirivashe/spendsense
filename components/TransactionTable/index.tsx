@@ -177,6 +177,11 @@ const TransactionTable = ({ from, to }: Props) => {
     columns,
     data: tableData,
     enableColumnActions: false,
+    state: {
+      showLoadingOverlay: isLoading,
+      showProgressBars: isFetching,
+      showSkeletons: isLoading,
+    },
     renderTopToolbarCustomActions: ({ table }) => (
       <Group p="sm" wrap="wrap" flex={1}>
         <Button
