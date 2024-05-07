@@ -45,12 +45,12 @@ const CategoryList = ({ type }: Props) => {
 
   if (!dataAvailable) {
     return (
-      <Center h={200} component={Stack} gap="xs">
+      <Stack h={200} gap="xs" justify="center" align="center">
         <Title>No categories</Title>
         <Text size="xs" c="dimmed">
           You have no {type} categories. Add some to manage
         </Text>
-      </Center>
+      </Stack>
     );
   }
 

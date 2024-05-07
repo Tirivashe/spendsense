@@ -138,9 +138,13 @@ const CreateCategoryModalBody = ({
             )}
           </InputBase>
         </Popover.Target>
-        <Popover.Dropdown>
+        <Popover.Dropdown
+          style={{ backgroundColor: "transparent", border: "none" }}
+        >
           <Picker
             data={data}
+            perLine={7}
+            maxFrequentRows={2}
             onEmojiSelect={(e: { native: string }) => {
               setEmoji(e.native);
               form.setFieldValue("icon", e.native);
