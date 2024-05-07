@@ -1,0 +1,4 @@
+.paper {
+  background-color: darken(var(--mantine-color-dark-8), 0.7);
+  border: 1px solid darken(var(--mantine-color-dark-8), 0.5);
+}

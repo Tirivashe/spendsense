@@ -1,0 +1,25 @@
+.badge {
+  &[data-type="income"] {
+    background-color: var(--mantine-color-green-9);
+    color: var(--mantine-color-green-2);
+  }
+
+  &[data-type="expense"] {
+    background-color: var(--mantine-color-red-9);
+    color: var(--mantine-color-red-2);
+  }
+}
+
+.root {
+  border: 1px solid red;
+}
+
+.button {
+  background-color: transparent;
+  color: white;
+  font-size: 0.8rem;
+
+  @mixin hover {
+    background-color: transparent;
+  }
+}
