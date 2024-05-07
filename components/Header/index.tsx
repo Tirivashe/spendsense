@@ -16,12 +16,13 @@ import { usePathname } from "next/navigation";
 import { useDisclosure } from "@mantine/hooks";
 import DrawerContent from "../DrawerContent";
 import { IconLogout } from "@tabler/icons-react";
-import { useClerk } from "@clerk/nextjs";
+import { useClerk, useUser } from "@clerk/nextjs";
 
 type Props = {};
 
 const Header = (props: Props) => {
   const { signOut } = useClerk();
+  const { user } = useUser();
   const pathname = usePathname();
   const [opened, { open, close }] = useDisclosure(false);
   const navPaths: { label: string; link: string }[] = [
@@ -29,6 +30,12 @@ const Header = (props: Props) => {
     { label: "Transactions", link: "/transactions" },
     { label: "Manage", link: "/manage" },
   ];
+
+  const initials = user
+    ? `${user?.firstName?.charAt(0).toUpperCase()}${user?.lastName
+        ?.charAt(0)
+        .toUpperCase()}`
+    : "U";
 
   const logout = useCallback(() => {
     signOut();
@@ -52,10 +59,22 @@ const Header = (props: Props) => {
           </React.Fragment>
         ))}
       </Group>
-      <Group justify="flex-end" align="center" flex={1} px="lg">
+      <Group
+        justify="flex-end"
+        align="center"
+        flex={1}
+        px="lg"
+        visibleFrom="sm"
+      >
         <Menu>
           <Menu.Target>
-            <Avatar style={{ cursor: "pointer" }}>MK</Avatar>
+            <Avatar
+              style={{ cursor: "pointer" }}
+              src={user?.imageUrl}
+              alt="profile_pic"
+            >
+              {!user?.hasImage && initials}
+            </Avatar>
           </Menu.Target>
           <Menu.Dropdown>
             <Menu.Label>Application</Menu.Label>
