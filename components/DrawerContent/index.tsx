@@ -1,7 +1,8 @@
-import { NavLink, Stack } from "@mantine/core";
+import { useClerk } from "@clerk/nextjs";
+import { Button, Center, Divider, NavLink, Stack } from "@mantine/core";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useCallback } from "react";
 
 type Props = {
   navPaths: { label: string; link: string }[];
@@ -9,6 +10,10 @@ type Props = {
 };
 
 const DrawerContent = ({ navPaths, close }: Props) => {
+  const { signOut } = useClerk();
+  const logout = useCallback(() => {
+    signOut();
+  }, [signOut]);
   const pathname = usePathname();
   return (
     <Stack>
@@ -24,6 +29,12 @@ const DrawerContent = ({ navPaths, close }: Props) => {
           variant="subtle"
         />
       ))}
+      <Divider />
+      <Center>
+        <Button variant="subtle" color="white" onClick={logout}>
+          Log out
+        </Button>
+      </Center>
     </Stack>
   );
 };
