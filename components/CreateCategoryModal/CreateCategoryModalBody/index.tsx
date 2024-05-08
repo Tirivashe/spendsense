@@ -161,7 +161,13 @@ const CreateCategoryModalBody = ({
         >
           Cancel
         </Button>
-        <Button type="submit" disabled={isPending} className={classes.button}>
+        <Button
+          type="submit"
+          disabled={isPending}
+          loading={isPending}
+          loaderProps={{ color: "gray.7" }}
+          className={classes.button}
+        >
           Save
         </Button>
       </Group>

@@ -77,4 +77,8 @@
     background-color: white;
     color: black;
   }
+
+  &[data-disabled="true"] {
+    background-color: var(--mantine-color-gray-9);
+  }
 }

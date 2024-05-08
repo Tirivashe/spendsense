@@ -57,4 +57,8 @@
     border: 1px solid white;
     color: white;
   }
+
+  &[data-disabled="true"] {
+    background-color: var(--mantine-color-gray-9);
+  }
 }

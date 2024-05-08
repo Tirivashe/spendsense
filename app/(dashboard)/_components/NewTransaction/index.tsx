@@ -175,6 +175,8 @@ const NewTransaction = () => {
             <Button
               type="submit"
               loading={isPending}
+              disabled={isPending}
+              loaderProps={{ color: "gray.7" }}
               className={classes["button-confirm"]}
             >
               Create
