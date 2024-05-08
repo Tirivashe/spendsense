@@ -1,0 +1,16 @@
+.tab {
+  background-color: transparent;
+  border-bottom: none;
+  &[data-active="true"] {
+    background-color: black;
+    color: white;
+    //border: 1px solid var(--mantine-color-gray-9);
+  }
+}
+
+.tabs {
+  background-color: var(--mantine-color-gray-9);
+  border-radius: var(--mantine-radius-sm);
+  padding: 2px;
+  border: none;
+}

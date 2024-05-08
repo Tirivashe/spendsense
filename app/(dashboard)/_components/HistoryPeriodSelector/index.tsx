@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import YearSelector from "./_components/YearSelector";
 import MonthSelector from "./_components/MonthSelector";
+import classes from "./historyperiodselector.module.css";
 
 type Props = {
   period: Period;
@@ -31,11 +32,19 @@ const HistoryPeriodSelector = ({
         value={timeframe}
         onChange={(value) => setTimeframe(value as Timeframe)}
       >
-        <Tabs.List>
-          <Tabs.Tab value="year" disabled={isFetching || isLoading}>
+        <Tabs.List className={classes.tabs}>
+          <Tabs.Tab
+            value="year"
+            disabled={isFetching || isLoading}
+            className={classes.tab}
+          >
             Year
           </Tabs.Tab>
-          <Tabs.Tab value="month" disabled={isFetching || isLoading}>
+          <Tabs.Tab
+            value="month"
+            disabled={isFetching || isLoading}
+            className={classes.tab}
+          >
             Month
           </Tabs.Tab>
         </Tabs.List>
